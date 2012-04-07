@@ -23,6 +23,15 @@
   return [[NSBundle mainBundle] resourcePath];
 }
 
++(NSString *)appName {
+	return [[[NSBundle mainBundle] infoDictionary] objectForKey: @"CFBundleDisplayName"];
+}
+
++(NSString *)appVersion {
+	NSDictionary * info = [[NSBundle mainBundle] infoDictionary];
+	return [info objectForKey: @"CFBundleShortVersionString"] ?: [info objectForKey:@"CFBundleVersion"];
+}
+
 + (BOOL)swizzleMethod:(SEL)originalSelector with:(SEL)anotherSelector in:(Class)klass {
   return [self swizzleMethod:originalSelector in:klass with:anotherSelector in:klass];
 }

@@ -11,6 +11,9 @@
 + (NSString *)appPath;
 + (NSString *)resourcePath;
 
++ (NSString *)appName;
++ (NSString *)appVersion;
+
 + (BOOL)swizzleMethod:(SEL)originalSelector with:(SEL)anotherSelector in:(Class)klass;
 + (BOOL)swizzleMethod:(SEL)originalSelector in:(Class)klass with:(SEL)anotherSelector in:(Class)anotherKlass;
 + (BOOL)swizzleClassMethod:(SEL)originalSelector with:(SEL)anotherSelector in:(Class)klass;
